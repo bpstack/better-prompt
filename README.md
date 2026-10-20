@@ -49,6 +49,8 @@ It is a clarity tool, not a saving one. That is why it never runs by itself: you
 
 Requires a Claude Code version with mods. Built and tested on 2.1.304.
 
+To get new versions on their own, turn on auto-update: `/plugin` → **Marketplaces** → **better-prompt** → **Enable auto-update**. Claude Code leaves it off for marketplaces outside Anthropic's.
+
 ## How it works
 
 One hooks module ([`hooks/register.tsx`](hooks/register.tsx)):
