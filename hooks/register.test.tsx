@@ -48,14 +48,14 @@ const band = ($: Engine, surface: 'terminal' | 'desktop') =>
 for (const surface of ['terminal', 'desktop'] as const) {
   test(`${surface}: Haiku's version replaces the draft only when Use is pressed`, async ($, on) => {
     const w = world(on)
-    type(w, 'arregla el test que falla en src/app.ts porfa')
+    type(w, 'fix the failing test in src/app.ts pls')
     const ui = await band($, surface)
 
     await ui.press({ key: 'rewrite' })
-    expect(w.asked[0]).toContain('arregla el test que falla en src/app.ts porfa')
+    expect(w.asked[0]).toContain('fix the failing test in src/app.ts pls')
     expect(await ui.find({ type: 'Text', text: /Fix the failing test/ })).toBeDefined()
     expect((await ui.find({ type: 'Text', text: / in \/ / }))?.text).toBe('· rewrite cost: 10 in / 5 out  ')
-    expect(w.box.text).toBe('arregla el test que falla en src/app.ts porfa')
+    expect(w.box.text).toBe('fix the failing test in src/app.ts pls')
 
     await ui.press({ key: 'use' })
     expect(w.box.text).toBe('Fix the failing test in src/app.ts.')
@@ -65,12 +65,12 @@ for (const surface of ['terminal', 'desktop'] as const) {
 
   test(`${surface}: Discard keeps the draft as typed`, async ($, on) => {
     const w = world(on)
-    type(w, 'explica qué hace el script de propagate')
+    type(w, 'explain what the build script does')
     const ui = await band($, surface)
 
     await ui.press({ key: 'rewrite' })
     await ui.press({ key: 'discard' })
-    expect(w.box.text).toBe('explica qué hace el script de propagate')
+    expect(w.box.text).toBe('explain what the build script does')
     expect(await ui.find({ type: 'Text', text: /Haiku's version/ })).toBeUndefined()
     await ui.unmount()
   })
@@ -78,7 +78,7 @@ for (const surface of ['terminal', 'desktop'] as const) {
 
 test('a draft too short is not sent to Haiku', async ($, on) => {
   const w = world(on)
-  type(w, 'hola')
+  type(w, 'hi there')
   const ui = await band($, 'terminal')
 
   await ui.press({ key: 'rewrite' })
