@@ -43,9 +43,11 @@ It is a clarity tool, not a saving one. That is why it never runs by itself: you
 ## Install
 
 ```text
-/plugin marketplace add <owner>/better-prompt
+/plugin marketplace add bpstack/better-prompt
 /plugin install better-prompt@better-prompt
 ```
+
+Requires a Claude Code version with mods. Built and tested on 2.1.304.
 
 ## How it works
 
