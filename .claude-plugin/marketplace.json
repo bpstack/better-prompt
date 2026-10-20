@@ -1,0 +1,18 @@
+{
+  "name": "better-prompt",
+  "owner": {
+    "name": "razyd"
+  },
+  "metadata": {
+    "description": "A Claude Code mod: Haiku rewrites the draft in your prompt box, keeping its intent, and you choose whether to use it."
+  },
+  "plugins": [
+    {
+      "name": "better-prompt",
+      "source": "./",
+      "description": "Haiku rewrites the draft in the prompt box, keeping its intent; you read it above the prompt and choose whether to use it.",
+      "version": "0.1.0",
+      "category": "productivity"
+    }
+  ]
+}
