@@ -23,7 +23,14 @@ The login test fails in CI but passes on my machine. It's in tests/auth.test.ts,
 
 ## Does it save tokens?
 
-No, it adds them: each rewrite is one more call, to Haiku, and **rewrite cost** is what that call took. It is a clarity tool: it pays off on long or confusing prompts, when it saves a "no, I meant…" turn of the main model. On short, clear prompts, or on pasted logs, skip it.
+No, it adds them: each rewrite is one more call, to Haiku, and **rewrite cost** is what that call took. Your prompt comes out about as long as your draft, so the main model reads about as much. Where it can pay off is in turns: a vague request that ends in "no, I meant…" costs a whole turn of the main model. That is not measured.
+
+| Your prompt | Worth it? |
+| --- | --- |
+| Short and clear | No: tokens and time for nothing |
+| Short but confusing | Yes, for clarity |
+| Long and messy (dictated, scattered ideas) | Where it helps most |
+| Mostly pasted material (logs, code, errors) | No: Haiku may drop a detail exactly where precision matters |
 
 ## Install
 
