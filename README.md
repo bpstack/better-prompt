@@ -62,3 +62,5 @@ One hooks module ([`hooks/register.tsx`](hooks/register.tsx)):
 claude plugin validate .
 claude plugin test .     # runs hooks/register.test.tsx against the engine
 ```
+
+MIT © bpstack

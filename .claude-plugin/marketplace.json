@@ -1,7 +1,7 @@
 {
   "name": "better-prompt",
   "owner": {
-    "name": "razyd"
+    "name": "bpstack"
   },
   "metadata": {
     "description": "A Claude Code mod: Haiku rewrites the draft in your prompt box, keeping its intent, and you choose whether to use it."
