@@ -67,4 +67,14 @@ claude plugin validate .
 claude plugin test .     # runs hooks/register.test.tsx against the engine
 ```
 
+### Releasing
+
+Users get a change only when the version goes up: Claude Code installs by `version`, not by tag.
+
+1. Commit the change on its own (`fix(...)`, `feat(...)`), with `validate` and `test` green.
+2. Bump `version` in **both** `.claude-plugin/plugin.json` and `.claude-plugin/marketplace.json`, to the same number, in one commit: `chore(marketplace): bump better-prompt to X.Y.Z`.
+3. Push.
+
+`X.Y.Z`: `Z` for a fix, `Y` for a feature, `X` for a change that breaks how it is used.
+
 MIT © bpstack
