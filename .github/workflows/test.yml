@@ -1,0 +1,19 @@
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  mod:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      # Pinned: the mod API is early access, so a new Claude Code is tried here on purpose, not by surprise
+      - run: npm install -g @anthropic-ai/claude-code@2.1.304
+      - run: claude plugin validate .
+      - run: claude plugin test .
