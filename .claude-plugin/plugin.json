@@ -1,6 +1,6 @@
 {
   "name": "better-prompt",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Haiku rewrites the draft in the prompt box, keeping its intent; you read it above the prompt and choose whether to use it.",
   "author": { "name": "bpstack" },
   "license": "MIT",
