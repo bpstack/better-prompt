@@ -11,12 +11,12 @@ Type a draft, then click **✨ Rewrite with Haiku**, or press `ctrl+x tab` and `
 - **`c` Cancel** stops the call while Haiku works.
 
 ```text
-❯ hey so the login test keeps failing in ci but works fine on my machine, its in tests/auth.test.ts around line 88 i think, something with the token expiring?? dont change the test itself just tell me whats going on and how to fix it
+❯ the signup form lets people send it with empty stuff or a wrong email and then they get an ugly error from the server, i want it to tell them right under each field whats wrong before it sends anything
 ```
 
 ```text
-✨ Haiku's version · rewrite cost: 340 in / 75 out  u: Use  d: Discard
-The login test fails in CI but passes on my machine. It's in tests/auth.test.ts, around line 88, and I think it has something to do with the token expiring. Don't change the test itself. Explain what's going on and how to fix it.
+✨ Haiku's version · rewrite cost: 432 in / 64 out  u: Use  d: Discard
+The signup form currently lets users submit with empty fields or an invalid email, and then they see an unclear error from the server. I want the form to validate each field before submitting and show the specific problem directly under that field.
 ```
 
 **Read Haiku's version before you use it:** it can drop or add a detail, most of all in pasted logs and code.
@@ -45,7 +45,7 @@ To update, run `claude plugin marketplace update better-prompt`, then `claude pl
 
 ## How it works
 
-One hooks module ([`hooks/register.tsx`](hooks/register.tsx)): it reads the draft with `$.prompt.read()`, sends it to Haiku with `$.model.complete()` and puts the answer in the box with `$.prompt.fill()`. Haiku sees your draft alone, not the conversation, and is told to keep every fact, path, number and doubt, to keep your language, and to add nothing you did not ask.
+One hooks module ([`hooks/register.tsx`](hooks/register.tsx)): it reads the draft with `$.prompt.read()`, sends it to Haiku with `$.model.complete()` and puts the answer in the box with `$.prompt.fill()`. Haiku sees your draft alone, not the conversation, and is told to keep every fact, path, number and doubt, to keep your language, to name what you describe with its technical term, and to add nothing you did not ask.
 
 ## Development
 
